@@ -1,7 +1,4 @@
-// src/TeamSection.js
-
 function TeamSection({ members }) {
-  // members → this is an array passed from App.js via props
   return (
     <section
       id="team"
