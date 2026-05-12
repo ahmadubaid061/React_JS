@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import HeroSection from "./components/HeroSection"; // ← import
 import TeamSection from "./components/TeamSection"; // ← import
+import LabSection from "./components/Lab10section";
+import Count from "./components/Counter";
 
 // Data passed as props
 const heroData = {
@@ -30,7 +32,15 @@ const teamData = [
   },
 ];
 
+// lab 10 section
+const LabData = {
+  title: "Welcome this lab 10 section",
+  description:
+    "In this lab will learn about using React Componenents and how to create and import them and how they will us mamke our code cleaner",
+};
+
 function App() {
+  // search bar functionality
   const [query, setQuery] = useState("");
 
   const handleSearch = () => {
@@ -46,6 +56,7 @@ function App() {
   };
   return (
     <>
+      {/* page header */}
       <div style={{ position: "sticky" }}>
         <nav
           className="navbar navbar-expand-lg navbar-dark"
@@ -111,15 +122,20 @@ function App() {
             </div>
           </div>
         </nav>
-
+        {/* hero section */}
         <HeroSection
           title={heroData.title}
           description={heroData.description}
           image={heroData.image}
         />
       </div>
-
+      {/* teams section */}
       <TeamSection members={teamData} />
+      {/* lab 10 section */}
+      <LabSection title={LabData.title} description={LabData.description} />
+      {/* counter program for practicing use states */}
+      
+      <Count />
     </>
   );
 }
