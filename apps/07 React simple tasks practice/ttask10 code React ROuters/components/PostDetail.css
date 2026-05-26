@@ -1,0 +1,82 @@
+.post-detail-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: #667eea;
+  cursor: pointer;
+  margin-bottom: 20px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.back-btn:hover {
+  background: rgba(102, 126, 234, 0.1);
+}
+
+.post-detail-card {
+  background: white;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  animation: slideIn 0.5s ease-in;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.detail-title {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.detail-meta {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #f0f0f0;
+  font-size: 14px;
+  color: #888;
+}
+
+.detail-content {
+  margin-bottom: 30px;
+}
+
+.detail-paragraph {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 600px) {
+  .post-detail-card {
+    padding: 25px;
+  }
+
+  .detail-title {
+    font-size: 28px;
+  }
+
+  .detail-paragraph {
+    font-size: 16px;
+  }
+}

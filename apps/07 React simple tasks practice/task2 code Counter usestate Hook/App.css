@@ -1,0 +1,24 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+.App {
+  width: 90%;
+  height: auto;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+@media (max-width=768px) {
+  .App {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width=480px) {
+  .App {
+    grid-template-columns: 1fr;
+  }
+}

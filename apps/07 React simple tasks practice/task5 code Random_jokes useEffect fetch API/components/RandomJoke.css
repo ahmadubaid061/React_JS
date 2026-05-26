@@ -1,0 +1,276 @@
+/* RandomJoke.css - Modern design matching previous themes */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.joke-container {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", "Fira Sans", "Helvetica Neue", sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.joke-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  padding: 50px;
+  width: 100%;
+  max-width: 650px;
+  animation: fadeIn 0.5s ease-in;
+  text-align: center;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.joke-title {
+  color: #333;
+  font-size: 32px;
+  margin-bottom: 30px;
+  font-weight: 600;
+  position: relative;
+  display: inline-block;
+}
+
+.joke-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 2px;
+}
+
+/* Loading State */
+.loading-state {
+  text-align: center;
+  padding: 40px;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 20px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-state p {
+  color: #666;
+  font-size: 16px;
+}
+
+/* Error State */
+.error-state {
+  text-align: center;
+  padding: 40px;
+}
+
+.error-icon {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.error-message {
+  color: #f44336;
+  font-size: 16px;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.btn-retry {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-retry:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* Joke Content */
+.joke-content {
+  margin: 30px 0;
+}
+
+.joke-setup {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  line-height: 1.4;
+  margin-bottom: 25px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  position: relative;
+}
+
+.quote-icon {
+  font-size: 40px;
+  color: #667eea;
+  opacity: 0.3;
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  font-family: serif;
+}
+
+.joke-punchline {
+  font-size: 20px;
+  color: #764ba2;
+  font-weight: 500;
+  padding: 20px;
+  background: linear-gradient(
+    135deg,
+    rgba(102, 126, 234, 0.1),
+    rgba(118, 75, 162, 0.1)
+  );
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.punchline-label {
+  display: inline-block;
+  background: #764ba2;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  margin-right: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Joke Metadata */
+.joke-meta {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.joke-type,
+.joke-id {
+  font-size: 12px;
+  color: #888;
+  text-transform: capitalize;
+}
+
+.joke-type::before {
+  content: "📝 ";
+  margin-right: 4px;
+}
+
+.joke-id::before {
+  content: "🔢 ";
+  margin-right: 4px;
+}
+
+/* New Joke Button */
+.btn-new-joke {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 14px 30px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  width: 100%;
+  margin-top: 20px;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.btn-new-joke:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.btn-new-joke:active {
+  transform: translateY(0);
+}
+
+.btn-new-joke:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .joke-card {
+    padding: 30px;
+    max-width: 95%;
+  }
+
+  .joke-title {
+    font-size: 24px;
+  }
+
+  .joke-setup {
+    font-size: 18px;
+    padding: 15px;
+  }
+
+  .joke-punchline {
+    font-size: 16px;
+    padding: 15px;
+  }
+
+  .quote-icon {
+    font-size: 30px;
+  }
+
+  .joke-meta {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+
+  .btn-new-joke {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+}

@@ -12,8 +12,6 @@ const NewsApp = () => {
   const API_KEY = "f07b0882d4a94064a1f0a5214a44f427";
   const BASE_URL = "https://newsapi.org/v2/top-headlines";
 
-  // Alternative: Use a CORS proxy if needed
-  // const PROXY_URL = 'https://cors-anywhere.herokuapp.com/';
 
   useEffect(() => {
     fetchNews();
@@ -42,7 +40,6 @@ const NewsApp = () => {
           "Request timeout. Please check your connection and try again.",
         );
       } else if (err.response && err.response.status === 426) {
-        // API key might be restricted or require payment
         setError(
           "API key issue: Please check your API key or use a different news API.",
         );
